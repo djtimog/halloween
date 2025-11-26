@@ -1,0 +1,22 @@
+{
+  "name": "halloween",
+  "version": "1.0.0",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
+    "prepare": "husky install"
+  },
+  "keywords": ["Halloween", "Scary", "Story", "Scary Stories", "Haunted"],
+  "author": "d.j.timog",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}

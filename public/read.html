@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read | Halloween</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Eater"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="header"></header>
+    <section>
+      <h2>Tonight's Top Scares</h2>
+
+      <div id="stories-container"></div>
+    </section>
+    <footer id="footer"></footer>
+    <script type="module" src="/script/index.js"></script>
+    <script type="module" src="/script/read.js"></script>
+    <script>
+      function toggleStoryText(button) {
+        const cardStory = button.closest(".card-story");
+        const cardStoryText = cardStory.querySelector(".card-story-text");
+
+        if (cardStoryText.classList.contains("expanded")) {
+          cardStoryText.classList.remove("expanded");
+          button.textContent = "Read More";
+        } else {
+          cardStoryText.classList.add("expanded");
+          button.textContent = "Read less";
+        }
+      }
+    </script>
+  </body>
+</html>

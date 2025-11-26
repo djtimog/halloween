@@ -1,0 +1,316 @@
+@font-face {
+  font-family: "Eater";
+  src: url("/assets/font/Eater-Regular.ttf");
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-image: url(" /assets/images/dark-horror-house.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: whitesmoke;
+  font-family: "Eater";
+}
+p {
+  margin: 0;
+}
+header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 15px 30px;
+  z-index: 50;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+}
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  color: white;
+  font-size: large;
+}
+.logo-img {
+  width: 60px;
+  height: 60px;
+}
+.nav-link-container {
+  display: flex;
+  gap: 15px;
+}
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: larger;
+}
+.nav-link-active {
+  color: rgba(255, 255, 255, 0.5);
+  cursor: default;
+}
+
+footer {
+  color: white;
+  font-size: large;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.mailing-list {
+  font-size: x-small;
+  margin: 0px;
+  word-spacing: 4px;
+}
+
+section {
+  padding: 10px 35px;
+  background-color: rgba(26, 24, 24, 0.7);
+}
+
+h1 {
+  text-align: center;
+}
+
+/* upload page */
+.status {
+  text-align: center;
+  color: green;
+}
+form {
+  padding: 15px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+label {
+  font-size: large;
+}
+label::after {
+  content: ":";
+}
+input {
+  padding: 7px;
+  font-size: large;
+  font-weight: 800;
+  border-radius: 5px;
+  background-color: white;
+  border: none;
+  font-family: "Eater";
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+textarea {
+  font-size: large;
+  font-weight: 800;
+  border-radius: 5px;
+  background-color: white;
+  border: none;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 150px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: "Eater";
+}
+.error {
+  text-align: center;
+  color: brown;
+  margin-top: -5px;
+  font-weight: 700;
+}
+button {
+  width: 100%;
+  font-size: large;
+  font-weight: 800;
+  font-family: "Eater";
+  border-radius: 5px;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+button:hover {
+  background-color: bisque;
+}
+button:active {
+  background-color: beige;
+}
+.card-container {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.card {
+  width: 350px;
+  margin: auto;
+  background-color: rgba(255, 228, 196, 0.3);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+}
+.card-icon {
+  font-size: xx-large;
+  color: green;
+  text-shadow: 1px 1px white;
+}
+.card-message {
+  font-size: x-large;
+  color: green;
+  text-shadow: 1px 1px black;
+}
+.card-button {
+  font-size: large;
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* read page */
+h2 {
+  text-align: center;
+}
+#stories-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.story-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  color: rgb(61, 3, 3);
+  position: relative;
+}
+.card-status {
+  position: absolute;
+  color: green;
+  top: -5px;
+  right: 5px;
+  border-radius: 50px;
+  border: 1px dashed green;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  font-weight: 800;
+  font-size: small;
+}
+.card-subtitle {
+  font-size: small;
+  margin: 0px;
+}
+.card-title {
+  font-size: 27px;
+  margin: 0px;
+}
+.card-story {
+  position: relative;
+  background-color: rgba(255, 228, 196, 0.75);
+  border-radius: 5px;
+  padding: 2px 4px;
+  padding-bottom: 12px;
+}
+.card-story-text {
+  font-size: small;
+  line-break: normal;
+  word-spacing: 4px;
+  max-height: 110px;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+}
+.card-story-text.expanded {
+  max-height: 2000px;
+}
+.view-story {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: small;
+  padding: 0px 2px;
+  border: 1px solid black;
+  border-radius: 2px;
+  width: max-content;
+  font-size: x-small;
+  word-spacing: 3px;
+}
+.country {
+  font-size: large;
+}
+
+/* home page */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  min-height: 95vh;
+}
+.home-title {
+  color: rgba(100, 30, 30, 0.7);
+  font-weight: 900;
+  word-spacing: 15px;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 2px 2px black;
+}
+.home-subtitle {
+  font-size: small;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  text-align: center;
+  color: rgb(200, 30, 30);
+  margin: 10px 0px;
+}
+.halloween {
+  font-size: xx-large;
+  letter-spacing: 5px;
+  word-spacing: 7px;
+  text-shadow: 2px 2px black;
+  color: rgba(100, 30, 30);
+}
+.home-text {
+  font-size: larger;
+  letter-spacing: 5px;
+  word-spacing: 7px;
+  text-align: center;
+  margin: 15px;
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px black;
+}
+.home-sub-text {
+  margin-top: 20px;
+  background-color: rgba(255, 228, 196, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+a {
+  color: rgba(100, 30, 30);
+}
