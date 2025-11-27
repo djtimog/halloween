@@ -1,4 +1,4 @@
-import { SubmitForm } from "../utils/submitForm.js";
+import { SubmitForm } from "../lib/submitForm.js";
 
 const submitButtonDom = document.getElementById("submitButton");
 

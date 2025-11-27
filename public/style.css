@@ -12,6 +12,9 @@ body {
   background-attachment: fixed;
   color: whitesmoke;
   font-family: "Eater";
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 p {
   margin: 0;
@@ -75,6 +78,7 @@ footer {
 
 section {
   padding: 10px 35px;
+  flex: 1;
   background-color: rgba(26, 24, 24, 0.7);
 }
 
