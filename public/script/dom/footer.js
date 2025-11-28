@@ -4,7 +4,7 @@ export const Footer = () => {
   return `
    <div>
       <p>Copyright © ${date.getFullYear()} DJ.timog. All Rights Reserved.</p>
-      <p class="mailing-list">Join the Midnight <a href="#">Mailing List</a></p>
+      <p class="mailing-list">Join the Midnight <a href="/mail.html">Mailing List</a></p>
    </div>
     `;
 };

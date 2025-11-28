@@ -2,14 +2,14 @@ import { getData } from "../utils/GetData.js";
 import { postData } from "../utils/PostData.js";
 import { sendResponse } from "../utils/SendResponse.js";
 
-export const handleGet = async (res) => {
+export const handleGetData = async (res) => {
   const parsedData = await getData();
   const content = JSON.stringify(parsedData);
 
   sendResponse(res, 200, "application/json", content);
 };
 
-export const handlePost = async (req, res) => {
+export const handlePostData = async (req, res) => {
   const initialData = await getData();
 
   let body = "";

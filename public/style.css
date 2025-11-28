@@ -12,9 +12,6 @@ body {
   background-attachment: fixed;
   color: whitesmoke;
   font-family: "Eater";
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 p {
   margin: 0;
@@ -75,11 +72,19 @@ footer {
   margin: 0px;
   word-spacing: 4px;
 }
+main {
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(26, 24, 24, 0.7);
+}
 
 section {
   padding: 10px 35px;
-  flex: 1;
-  background-color: rgba(26, 24, 24, 0.7);
+  min-height: max-content;
+  width: 75%;
+  margin: auto;
 }
 
 h1 {
@@ -317,4 +322,10 @@ h2 {
 }
 a {
   color: rgba(100, 30, 30);
+}
+#email,
+#userName {
+  width: 100%;
+  margin-bottom: 35px;
+  box-sizing: border-box;
 }

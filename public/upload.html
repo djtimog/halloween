@@ -12,70 +12,72 @@
   </head>
   <body>
     <header id="header"></header>
-    <section id="upload">
-      <div id="uploadInput">
-        <div>
-          <h1>Write your Story</h1>
-          <p class="status"></p>
-        </div>
-        <form onsubmit="submitForm">
-          <div class="input-container">
-            <label for="title">Title</label>
-            <input
-              type="text"
-              id="title"
-              title="Title"
-              placeholder="Write your story title"
-            />
-            <p class="error"></p>
+    <main>
+      <section id="upload">
+        <div id="uploadInput">
+          <div>
+            <h1>Write your Story</h1>
+            <p class="status"></p>
           </div>
-          <div class="input-container">
-            <label for="country">Country</label>
-            <input
-              type="text"
-              id="country"
-              title="Country"
-              placeholder="Country"
-            />
-            <p class="error"></p>
-          </div>
+          <form onsubmit="submitForm">
+            <div class="input-container">
+              <label for="title">Title</label>
+              <input
+                type="text"
+                id="title"
+                title="Title"
+                placeholder="Write your story title"
+              />
+              <p class="error"></p>
+            </div>
+            <div class="input-container">
+              <label for="country">Country</label>
+              <input
+                type="text"
+                id="country"
+                title="Country"
+                placeholder="Country"
+              />
+              <p class="error"></p>
+            </div>
 
-          <div class="input-container">
-            <label for="timeStamp">Time Stamp</label>
-            <input type="datetime-local" id="timeStamp" title="Time Stamp" />
-            <p class="error"></p>
-          </div>
-          <div class="input-container">
-            <label for="story">Story</label>
-            <textarea
-              name="story"
-              id="story"
-              cols="4"
-              placeholder="Write your story experience here"
-            ></textarea>
-            <p class="error"></p>
-          </div>
-          <div class="input-container">
-            <button type="button" id="submitButton">Submit</button>
-          </div>
-        </form>
-      </div>
-      <div class="card-container" id="successUpload">
-        <div class="card">
-          <div class="card-icon">✔️</div>
-          <p class="card-message">Your Story was Sent Successfully</p>
-          <p class="card-buttonmessage">Click to write and send more Story</p>
-          <button
-            class="card-button"
-            type="button"
-            id="goBack"
-            onclick="goBacktoUpload()"
-          >
-            Go Back
-          </button>
+            <div class="input-container">
+              <label for="timeStamp">Time Stamp</label>
+              <input type="datetime-local" id="timeStamp" title="Time Stamp" />
+              <p class="error"></p>
+            </div>
+            <div class="input-container">
+              <label for="story">Story</label>
+              <textarea
+                name="story"
+                id="story"
+                cols="4"
+                placeholder="Write your story experience here"
+              ></textarea>
+              <p class="error"></p>
+            </div>
+            <div class="input-container">
+              <button type="button" id="submitButton">Submit</button>
+            </div>
+          </form>
         </div>
-      </div>
-    </section>
+        <div class="card-container" id="successUpload">
+          <div class="card">
+            <div class="card-icon">✔️</div>
+            <p class="card-message">Your Story was Sent Successfully</p>
+            <p class="card-buttonmessage">Click to write and send more Story</p>
+            <button
+              class="card-button"
+              type="button"
+              id="goBack"
+              onclick="goBacktoUpload()"
+            >
+              Go Back
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer id="footer"></footer>
     <script type="module" src="/script/index.js"></script>
     <script type="module" src="/script/upload.js"></script>
