@@ -22,7 +22,7 @@ export const handlePostData = async (req, res) => {
     try {
       const parsedData = JSON.parse(body);
       const finalData = [...initialData, parsedData];
-      await postData(finalData);
+      return await postData(finalData);
     } catch (error) {
       sendResponse(res, 400, "text/plain", "Invalid JSON");
     }

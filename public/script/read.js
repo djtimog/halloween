@@ -5,7 +5,7 @@ const storyContainerDom = document.getElementById("stories-container");
 async function uploadData() {
   try {
     const response = await fetch("/api");
-    const parsedData = await response.json(); // FIXED
+    const parsedData = await response.json();
 
     storyContainerDom.innerHTML = storyContainer(parsedData);
 

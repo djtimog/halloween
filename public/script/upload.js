@@ -15,6 +15,4 @@ const Error = {
   story: "",
 };
 
-export const formStatus = {};
-
 submitButtonDom.addEventListener("click", async () => await SubmitForm(Error));

@@ -16,10 +16,10 @@ export const SubmitForm = async (Error) => {
   const storyValue = storyDom.value;
   validateForm(Error, titleValue, countryValue, timeStampValue, storyValue);
 
+  ErrorDom.forEach((dom, index) => {
+    dom.innerText = getErrorByIndex(Error, index);
+  });
   if (Error.title || Error.country || Error.story) {
-    ErrorDom.forEach((dom, index) => {
-      dom.innerText = getErrorByIndex(Error, index);
-    });
     return;
   }
 

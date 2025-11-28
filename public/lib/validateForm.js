@@ -14,8 +14,8 @@ export const validateForm = (Error, title, country, timeStamp, story) => {
   } else {
     Error.timeStamp = "";
   }
-  if (!story.trim() || story.trim().length < 10) {
-    Error.story = "Story must be more than 15 characters";
+  if (!story.trim() || story.trim().length < 150) {
+    Error.story = "Story must be at least 100 words Long";
   } else {
     Error.story = "";
   }

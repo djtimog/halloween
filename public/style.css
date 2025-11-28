@@ -201,7 +201,7 @@ h2 {
 #stories-container {
   padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 30px;
 }
 
@@ -217,7 +217,7 @@ h2 {
 .card-status {
   position: absolute;
   color: green;
-  top: -5px;
+  top: 2px;
   right: 5px;
   border-radius: 50px;
   border: 1px dashed green;
