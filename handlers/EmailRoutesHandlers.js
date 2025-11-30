@@ -22,6 +22,9 @@ export const handlePostEmails = async (req, res) => {
     try {
       const parsedEmail = JSON.parse(body);
       const finalEmail = [...initialEmail, parsedEmail];
+
+      sendResponse(res, 200, "application/json", JSON.stringify(parsedEmail));
+
       await postEmails(finalEmail);
     } catch (error) {
       sendResponse(res, 400, "text/plain", "Invalid JSON");

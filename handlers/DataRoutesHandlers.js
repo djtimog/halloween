@@ -1,6 +1,7 @@
 import { getData } from "../utils/GetData.js";
 import { postData } from "../utils/PostData.js";
 import { sendResponse } from "../utils/SendResponse.js";
+import { sanitizeData } from "../utils/SanitizeData.js";
 
 export const handleGetData = async (res) => {
   const parsedData = await getData();
@@ -21,9 +22,19 @@ export const handlePostData = async (req, res) => {
   req.on("end", async () => {
     try {
       const parsedData = JSON.parse(body);
-      const finalData = [...initialData, parsedData];
+
+      const cleanedData = {
+        title: sanitizeData(parsedData.title),
+        country: sanitizeData(parsedData.country),
+        timeStamp: parsedData.timeStamp,
+        story: sanitizeData(parsedData.story),
+      };
+
+      const finalData = [...initialData, cleanedData];
+      sendResponse(res, 200, "application/json", JSON.stringify(cleanedData));
       return await postData(finalData);
     } catch (error) {
+      console.error("Error caught:", error.message, body);
       sendResponse(res, 400, "text/plain", "Invalid JSON");
     }
   });
