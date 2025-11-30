@@ -14,13 +14,13 @@ body {
   font-family: "Eater";
 }
 p {
-  margin: 0;
+  margin: 0px;
 }
 header {
   position: sticky;
   top: 0;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 15px 30px;
+  padding: 2%;
   z-index: 50;
 }
 nav {
@@ -31,11 +31,9 @@ nav {
 }
 .logo-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 5px;
   color: white;
-  font-size: large;
+  font-size: small;
 }
 .logo-img {
   width: 60px;
@@ -43,12 +41,12 @@ nav {
 }
 .nav-link-container {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 .nav-link {
   text-decoration: none;
   color: white;
-  font-size: larger;
+  font-size: large;
 }
 .nav-link-active {
   color: rgba(255, 255, 255, 0.5);
@@ -254,7 +252,7 @@ h2 {
   overflow: hidden;
 }
 .card-story-text.expanded {
-  max-height: 2000px;
+  max-height: 10000px;
 }
 .view-story {
   position: absolute;
