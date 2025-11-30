@@ -32,8 +32,6 @@ const server = http.createServer(async (req, res) => {
     } else {
       return await handlePostEmails(req, res);
     }
-  } else if (req.url === "/generateStory" && req.method === "GET") {
-    return await handleGenerateStory(res);
   } else if (!req.url.startsWith("/api") && !req.url.startsWith("/subscribe")) {
     return await serveStatic(req, res, __dirname);
   }
