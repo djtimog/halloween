@@ -176,12 +176,10 @@ button:active {
 }
 .card-icon {
   font-size: xx-large;
-  color: green;
   text-shadow: 1px 1px white;
 }
 .card-message {
   font-size: x-large;
-  color: green;
   text-shadow: 1px 1px black;
 }
 .card-button {

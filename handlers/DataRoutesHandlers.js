@@ -2,6 +2,7 @@ import { getData } from "../utils/GetData.js";
 import { postData } from "../utils/PostData.js";
 import { sendResponse } from "../utils/SendResponse.js";
 import { sanitizeData } from "../utils/SanitizeData.js";
+import { isStoryScary } from "../utils/StoryClassifier.js";
 
 export const handleGetData = async (res) => {
   const parsedData = await getData();
@@ -22,6 +23,22 @@ export const handlePostData = async (req, res) => {
   req.on("end", async () => {
     try {
       const parsedData = JSON.parse(body);
+      const storyText = parsedData.story;
+
+      const scary = await isStoryScary(storyText);
+
+      if (!scary) {
+        sendResponse(
+          res,
+          400,
+          "application/json",
+          JSON.stringify({
+            status: "error",
+            message: "Your story was rejected because it is not scary enough!",
+          })
+        );
+        return;
+      }
 
       const cleanedData = {
         title: sanitizeData(parsedData.title),

@@ -8,8 +8,12 @@ import {
   timeStampDom,
   titleDom,
 } from "../script/upload.js";
+import { renderStatusCard } from "../script/dom/renderUploadCard.js";
 
 export const SubmitForm = async (Error) => {
+  const statusCardDom = document.getElementById("statusCard");
+  const uploadInput = document.getElementById("uploadInput");
+
   const titleValue = titleDom.value;
   const countryValue = countryDom.value;
   const timeStampValue = timeStampDom.value;
@@ -27,11 +31,6 @@ export const SubmitForm = async (Error) => {
     ? new Date(timeStampValue)
     : new Date();
 
-  titleDom.value = "";
-  countryDom.value = "";
-  timeStampDom.value = "";
-  storyDom.value = "";
-
   const data = {
     title: titleValue,
     country: countryValue,
@@ -39,7 +38,7 @@ export const SubmitForm = async (Error) => {
     story: storyValue,
   };
 
-  await fetch("/api", {
+  const result = await fetch("/api", {
     method: "POST",
     body: JSON.stringify(data),
     headers: {
@@ -47,9 +46,19 @@ export const SubmitForm = async (Error) => {
     },
   });
 
-  const successUploadDom = document.getElementById("successUpload");
-  const uploadInput = document.getElementById("uploadInput");
+  if (!result.ok) {
+    uploadInput.style.display = "none";
+    statusCardDom.style.display = "block";
+    renderStatusCard("failed");
+    return;
+  }
+
+  titleDom.value = "";
+  countryDom.value = "";
+  timeStampDom.value = "";
+  storyDom.value = "";
 
   uploadInput.style.display = "none";
-  successUploadDom.style.display = "block";
+  statusCardDom.style.display = "block";
+  renderStatusCard("success");
 };

@@ -62,34 +62,11 @@
           </form>
         </div>
 
-        <div class="card-container" id="successUpload">
-          <div class="card">
-            <div class="card-icon">✔️</div>
-            <p class="card-message">Your Story was Sent Successfully</p>
-            <p class="card-buttonmessage">Click to write and send more Story</p>
-            <button
-              class="card-button"
-              type="button"
-              id="goBack"
-              onclick="goBacktoUpload()"
-            >
-              Go Back
-            </button>
-          </div>
-        </div>
+        <div class="card-container" id="statusCard"></div>
       </section>
     </main>
     <footer id="footer"></footer>
     <script type="module" src="/script/index.js"></script>
     <script type="module" src="/script/upload.js"></script>
-    <script>
-      function goBacktoUpload() {
-        const successUploadDom = document.getElementById("successUpload");
-        const uploadInput = document.getElementById("uploadInput");
-
-        uploadInput.style.display = "block";
-        successUploadDom.style.display = "none";
-      }
-    </script>
   </body>
 </html>
