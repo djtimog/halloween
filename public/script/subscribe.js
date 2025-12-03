@@ -1,8 +1,9 @@
+const subscribeForm = document.getElementById("subscribeForm");
 const subscribeBtn = document.getElementById("subscribe");
 
-const validateEmail = (email, userName) => {
+const validateEmail = ({ email, username }) => {
   let emailError = "";
-  if (!(userName.trim().length > 3)) {
+  if (!(username.trim().length > 3)) {
     emailError = "User name must be at least 3 charcaters";
   } else if (!(email.trim().length > 6)) {
     emailError = "Email must be more than 8 characters";
@@ -16,9 +17,9 @@ const validateEmail = (email, userName) => {
   return emailError;
 };
 
-const submitEmail = async (emailDom, userNameDom) => {
+const submitEmail = async (emailDom, usernameDom) => {
   const inputEmail = emailDom.value;
-  const username = userNameDom.value;
+  const username = usernameDom.value;
 
   try {
     await fetch("/subscribe", {
@@ -33,7 +34,7 @@ const submitEmail = async (emailDom, userNameDom) => {
   }
 
   emailDom.value = "";
-  userNameDom.value = "";
+  usernameDom.value = "";
   subscribeBtn.innerText = "Submitted!!";
   subscribeBtn.style.color = "green";
 
@@ -43,14 +44,19 @@ const submitEmail = async (emailDom, userNameDom) => {
   }, 3000);
 };
 
-subscribeBtn.addEventListener("click", async () => {
+subscribeForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formEl = event.currentTarget;
+  const form = new FormData(formEl);
+  const formData = {
+    email: form.get("email"),
+    username: form.get("fullname"),
+  };
   const emailDom = document.getElementById("email");
   const userNameDom = document.getElementById("userName");
   const errorDom = document.getElementById("error");
-  const inputEmail = emailDom.value;
-  const username = userNameDom.value;
 
-  const Err = validateEmail(inputEmail, username);
+  const Err = validateEmail(formData);
 
   errorDom.innerText = Err;
   if (Err) return;

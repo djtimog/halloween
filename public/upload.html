@@ -19,13 +19,14 @@
             <h1>Write your Story</h1>
             <p class="status"></p>
           </div>
-          <form onsubmit="submitForm">
+          <form id="uploadForm">
             <div class="input-container">
               <label for="title">Title</label>
               <input
                 type="text"
                 id="title"
                 title="Title"
+                name="title"
                 placeholder="Write your story title"
               />
               <p class="error"></p>
@@ -36,6 +37,7 @@
                 type="text"
                 id="country"
                 title="Country"
+                name="country"
                 placeholder="Country"
               />
               <p class="error"></p>
@@ -43,7 +45,12 @@
 
             <div class="input-container">
               <label for="timeStamp">Time Stamp</label>
-              <input type="datetime-local" id="timeStamp" title="Time Stamp" />
+              <input
+                type="datetime-local"
+                id="timeStamp"
+                name="timeStamp"
+                title="Time Stamp"
+              />
               <p class="error"></p>
             </div>
             <div class="input-container">
@@ -57,7 +64,7 @@
               <p class="error"></p>
             </div>
             <div class="input-container">
-              <button type="button" id="submitButton">Submit</button>
+              <button type="submit" id="submitButton">Submit</button>
             </div>
           </form>
         </div>

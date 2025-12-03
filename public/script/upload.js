@@ -1,6 +1,6 @@
 import { SubmitForm } from "../lib/submitForm.js";
 
-const submitButtonDom = document.getElementById("submitButton");
+const uploadForm = document.getElementById("uploadForm");
 
 export const titleDom = document.getElementById("title");
 export const countryDom = document.getElementById("country");
@@ -15,4 +15,15 @@ const Error = {
   story: "",
 };
 
-submitButtonDom.addEventListener("click", async () => await SubmitForm(Error));
+uploadForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const formEl = event.currentTarget;
+  const form = new FormData(formEl);
+  const formData = {
+    title: form.get("title"),
+    country: form.get("country"),
+    timeStamp: form.get("timeStamp"),
+    story: form.get("story"),
+  };
+  await SubmitForm(formData, Error);
+});

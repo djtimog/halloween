@@ -1,4 +1,4 @@
-export const validateForm = (Error, title, country, timeStamp, story) => {
+export const validateForm = (Error, { title, country, timeStamp, story }) => {
   if (!title.trim() || title.trim().length < 3) {
     Error.title = "Title must be more than 3 characters";
   } else {
