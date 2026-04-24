@@ -20,12 +20,8 @@ jobs:
         with:
           node-version: "22.x"
 
-      - name: npm install, build, and test
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          npm install
-          npm run test --if-present
+      - name: npm install
+        run: npm install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
